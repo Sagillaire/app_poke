@@ -1,4 +1,13 @@
 import styled from 'styled-components';
+import PollIcon from '@mui/icons-material/Poll';
+
+export const ChartButton = styled(PollIcon)`
+    color: #c0392b;
+    cursor: pointer;
+    :hover {
+        color: #d35400;
+    }
+`;
 
 export const HeaderStyled = styled.header`
     gap: 10px;

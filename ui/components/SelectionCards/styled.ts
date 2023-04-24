@@ -7,6 +7,7 @@ export const CardContainer = styled.div<TCardContainer>`
     gap: 10px;
     width: 300px;
     color: brown;
+    margin: 0 auto;
     height: 200px;
     display: flex;
     cursor: pointer;

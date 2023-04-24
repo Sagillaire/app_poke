@@ -16,7 +16,9 @@ export type PokemonType =
     | 'dragon'
     | 'dark'
     | 'steel'
-    | 'fairy';
+    | 'fairy'
+    | 'shadow'
+    | 'unknown';
 
 export const getPokemonTypeColorCard = (type: PokemonType) => {
     const getPokemonTypeColor: Record<PokemonType, string> = {
@@ -37,7 +39,9 @@ export const getPokemonTypeColorCard = (type: PokemonType) => {
         dragon: '#A27DFA',
         dark: '#A29288',
         steel: '#D1D1E0',
-        fairy: '#F4BDC9'
+        fairy: '#F4BDC9',
+        shadow: '#333333',
+        unknown: '#D3D3D3'
     }
 
     return getPokemonTypeColor[type]
@@ -62,7 +66,9 @@ export const getPokemonTypeColor = (type: PokemonType) => {
         dragon: '#7038F8',
         dark: '#705848',
         steel: '#B8B8D0',
-        fairy: '#EE99AC'
+        fairy: '#EE99AC',
+        shadow: '#333333',
+        unknown: '#D3D3D3'
     }
 
     return getPokemonTypeColor[type]
