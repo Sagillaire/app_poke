@@ -1,4 +1,5 @@
 export { Modal } from './Modal'
+export { Drawer } from './Drawer'
 export { Loading } from './Loading'
 export { PokemonCardView } from './PokemonCard'
 export { SelectionCards } from './SelectionCards'

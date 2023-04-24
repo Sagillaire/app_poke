@@ -3,14 +3,17 @@ import { IPokemons } from './types'
 import { useQuery } from 'react-query'
 import { ApiMethods } from '../../Api/ApiMethods'
 
-export const useGetPokemons = (offset = 0, limit = 20) => {
-    const [dataPokemons, setDataPokemons] = useState<IPokemons>()
-    const { isLoading } = useQuery(['useGetPokemons', offset, limit],
-        () => ApiMethods.getByParams<IPokemons>(`pokemon`, { offset, limit }), {
-        onSuccess: (data) => {
-            setDataPokemons(data)
+export const useGetPokemons = (offset: number, limit = 30) => {
+    const [dataPokemons, setDataPokemons] = useState<IPokemons>({ results: [] });
+    const { isLoading } = useQuery(
+        ['useGetPokemons', offset],
+        () => ApiMethods.getByParams<IPokemons>(`pokemon?limit=${limit}&offset=${offset}`),
+        {
+            onSuccess: (data) => {
+                setDataPokemons((prevData) => ({ results: [...prevData.results, ...data.results] }));
+            }
         }
-    })
+    );
 
-    return { pokes: dataPokemons, isLoading }
-}
+    return { pokes: dataPokemons, isLoading };
+};

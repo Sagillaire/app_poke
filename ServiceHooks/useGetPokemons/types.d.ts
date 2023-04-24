@@ -2,7 +2,7 @@ export interface IPokemons {
     count?:    number;
     next?:     null;
     previous?: null;
-    results?:  Result[];
+    results:  Result[];
 }
 
 export interface Result {
