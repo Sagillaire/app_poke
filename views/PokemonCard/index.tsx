@@ -28,7 +28,10 @@ export const PokemonCard: FC<{ id: string }> = ({ id }) => {
 
                 {/* POKEMON IMAGE */}
                 <PokeImgContainer>
-                    <PokeImg src={`${pokemon?.sprites?.other?.dream_world?.front_default}`} />
+                    <PokeImg
+                        hasImg={Boolean(pokemon?.sprites?.other?.dream_world?.front_default) || Boolean(pokemon?.sprites?.other?.home?.front_default)}
+                        src={`${pokemon?.sprites?.other?.dream_world?.front_default || pokemon?.sprites?.other?.home?.front_default || '/images/pokeball.png'}`}
+                    />
                 </PokeImgContainer>
             </PokemonCardContainer>
     )

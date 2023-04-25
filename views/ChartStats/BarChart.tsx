@@ -1,4 +1,4 @@
-import React from 'react';
+import { useRef } from 'react';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -8,8 +8,9 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { Bar, getElementAtEvent } from 'react-chartjs-2';
 import { getPokemonTypeColorCard } from '../../utils';
+import { useRouter } from 'next/router';
 
 ChartJS.register(
     CategoryScale,
@@ -36,6 +37,14 @@ export const options = {
 const labels = ['Pokemons List Type'];
 
 export const BarChart = ({ counts }: any) => {
+    const router = useRouter()
+    const chartRef: any = useRef();
+    const handleClick = (event: any) => {
+        const element = getElementAtEvent(chartRef.current, event)
+        const datasetIndex = element[0]?.datasetIndex + 1
+        router.push(`/type/${datasetIndex}`)
+    }
+
     const datasets: any[] = []
     counts?.forEach((dataSet: any) => datasets.push({
         data: [dataSet?.count],
@@ -43,5 +52,12 @@ export const BarChart = ({ counts }: any) => {
         backgroundColor: getPokemonTypeColorCard(dataSet?.name)
     }));
 
-    return <Bar options={options} data={{labels, datasets}} />;
+    return (
+        <Bar
+            ref={chartRef}
+            options={options}
+            onClick={handleClick}
+            data={{ labels, datasets }}
+        />
+    )
 }

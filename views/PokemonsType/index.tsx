@@ -2,13 +2,13 @@
 import { FC, useState } from 'react'
 import { PokemonCard } from '../PokemonCard'
 import { getPokemonUrlId } from '../../utils'
-import { useGetPokemons } from '../../ServiceHooks'
+import { useGetPokemonByType } from '../../ServiceHooks'
 import { Loading, PokemonCardView, SelectionCards } from '../../ui'
-import { CardContainer, HomeContainer, HomeTittle, LoadingContainer } from './styled'
+import { CardContainer, HomeContainer, HomeTittle, LoadingContainer } from '../Home/styled'
 
-export const HomeView: FC = () => {
+export const PokemonsType: FC = () => {
     const [offset, setOffset] = useState<number>(0)
-    const { pokes, isLoading } = useGetPokemons(offset)
+    const { pokeTypes, isLoading } = useGetPokemonByType()
 
     const handleScroll = (event: Event) => {
         const target = event.target as HTMLElement
@@ -23,10 +23,10 @@ export const HomeView: FC = () => {
                 SELECT YOUR POKEMON!
             </HomeTittle>
             <CardContainer onScroll={handleScroll as any}>
-                {pokes?.results?.map((pokemon, i) => {
-                    const id = getPokemonUrlId(pokemon.url)
+                {pokeTypes?.pokemon?.map((pokemon, i) => {
+                    const id = getPokemonUrlId(pokemon?.pokemon.url)
                     return (
-                        <SelectionCards key={i} url={pokemon?.name}>
+                        <SelectionCards key={i} url={pokemon?.pokemon?.name}>
                             <PokemonCard id={`${id}`} />
                         </SelectionCards>
                     )

@@ -77,9 +77,9 @@ export const PokeImgContainer = styled.div`
     position: absolute;
 `;
 
-export const PokeImg = styled.img`
+export const PokeImg = styled.img<{ hasImg: boolean }>`
     right: 5px;
     width: 100%;
-    height: 100%;
     bottom: 10px;
+    height: ${({ hasImg }) => hasImg ? '100%' : '70%'};
 `;

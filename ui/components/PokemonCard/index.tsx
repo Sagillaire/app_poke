@@ -21,7 +21,7 @@ export const PokemonCardView: FC = () => {
                     <Container>
                         <ImageContainer bgColor={pokemon?.types}>
                             <PokeId>#{pokemon?.id}</PokeId>
-                            <PokemonImage src={pokemon?.sprites?.other?.dream_world?.front_default} />
+                            <PokemonImage src={pokemon?.sprites?.other?.dream_world?.front_default || pokemon?.sprites?.other?.home?.front_default || '/images/pokeball.png'} />
                         </ImageContainer>
                         <div style={{ padding: '10px 5px' }}>
                             <NamePokemon>{pokemon?.id}. {pokemon?.name}</NamePokemon>
