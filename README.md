@@ -33,6 +33,9 @@ Para ejecutar la aplicación, ejecute el siguiente comando en la terminal:
 ```
 Estos comandos ejecutarán la aplicación en su navegador en el puerto 3000.
 
+## Despliegue del Proyecto
+El proyecto también ha sido desplegado en Netlify y se puede acceder desde [https://sagillaire-app-poke.netlify.app/](https://sagillaire-app-poke.netlify.app/)
+
 ## Bibliotecas Utilizadas
 ### Emotion
 Emotion es una biblioteca CSS en JS para React que permite escribir estilos en JavaScript. Se utiliza para la estilización de los componentes.
