@@ -41,8 +41,10 @@ export const BarChart = ({ counts }: any) => {
     const chartRef: any = useRef();
     const handleClick = (event: any) => {
         const element = getElementAtEvent(chartRef.current, event)
-        const datasetIndex = element[0]?.datasetIndex + 1
-        router.push(`/type/${datasetIndex}`)
+        if (element.length) {
+            const datasetIndex = element[0]?.datasetIndex + 1
+            router.push(`/type/${datasetIndex}`)
+        }
     }
 
     const datasets: any[] = []
