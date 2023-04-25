@@ -1,34 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Documentación de Proyecto - App_poke
+Este proyecto fue desarrollado utilizando Next.js, una popular biblioteca de React utilizada para crear aplicaciones web del lado del cliente y del servidor.
 
-## Getting Started
+## Sobre el proyecto
+Este proyecto es una aplicación web para visualizar información sobre todos los Pokémons existentes. La aplicación utiliza las siguientes tecnologías y bibliotecas:
 
-First, run the development server:
+ReactJS
+Material-UI
+ChartJS
+Axios
+React-Query
+Emotion
+Styled-components
+
+## Clonación del Proyecto
+Para clonar el proyecto, asegúrese de tener Git instalado en su máquina local. Abra la terminal y ejecute el siguiente comando:
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/Sagillaire/app_poke.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalación de Dependencias
+Antes de ejecutar la aplicación, asegúrese de instalar todas las dependencias utilizando los siguientes comandos:
+```bash
+cd app_poke
+"yarn" o "npm install"
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Ejecución del Proyecto
+Para ejecutar la aplicación, ejecute el siguiente comando en la terminal:
+```bash
+"yarn dev" o "npm run dev"
+```
+Estos comandos ejecutarán la aplicación en su navegador en el puerto 3000.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Bibliotecas Utilizadas
+### Emotion
+Emotion es una biblioteca CSS en JS para React que permite escribir estilos en JavaScript. Se utiliza para la estilización de los componentes.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Material-UI
+Material-UI es una biblioteca de componentes de interfaz de usuario para React. Se utiliza para construir la interfaz de usuario de la aplicación.
 
-## Learn More
+### ChartJS y react-chartjs-2
+ChartJS es una biblioteca de gráficos de JavaScript que permite crear varios tipos de gráficos. react-chartjs-2 es un paquete que permite utilizar ChartJS en React.
 
-To learn more about Next.js, take a look at the following resources:
+### Axios
+Axios es una biblioteca de JavaScript utilizada para realizar solicitudes HTTP desde el navegador o NodeJS. Se utiliza para realizar solicitudes a la API de Pokémon.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### React-Query
+React-Query es una biblioteca de React utilizada para el manejo de solicitudes y caché de datos. Se utiliza para manejar los datos que se obtienen de la API de Pokémon.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Styled-components
+Styled-components es una biblioteca de React utilizada para escribir CSS en JavaScript. Se utiliza para la estilización de los componentes.
