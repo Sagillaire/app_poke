@@ -20,7 +20,7 @@ export const HomeView: FC = () => {
     return (
         <HomeContainer>
             <HomeTittle>
-                SELECT YOUR POKEMON!
+                YOUR POKEDEX!
             </HomeTittle>
             <CardContainer onScroll={handleScroll as any}>
                 {pokes?.results?.map((pokemon, i) => {
